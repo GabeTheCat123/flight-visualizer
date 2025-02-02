@@ -2,8 +2,52 @@
 <html>
     <head>
         <title>Flight Visualizer</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+	        h1#welcome {
+	            transition: opacity 0.5s ease;
+	            opacity: 1;
+	        }
+    	</style>
+    	<script>
+	        const texts = [
+	        	"¡Bienvenido a Flight Visualizer!",
+	        	"Bienvenue à Flight Visualizer!",
+	        	"Добро пожаловать в Flight Visualizer!",
+	        	"欢迎来到 Flight Visualizer！",
+	        	"Flight Visualizer へようこそ！"
+	        ];
+	        let index = 0;
+	
+	        setInterval(() => {
+	            const h1 = document.getElementById("welcome");
+	            h1.style.opacity = 0;
+	
+	            setTimeout(() => {
+	                h1.innerText = texts[index];
+	                h1.style.opacity = 1;
+	                index = (index + 1) % texts.length;
+	            }, 500);
+	        }, 6000);
+    	</script>
     </head>
     <body>
-        <h1>gabethecat's page</h1>
+    	<div class="center">
+    		<h1 id="welcome">Welcome to Flight Visualizer!</h1>
+    		<hr class="small">
+    		<input type="text" id="input">
+    		<button onclick="redirectToAirport();">Search</button>
+		    <script>
+		        function redirectToAirport() {
+		            const airportInput = document.getElementById('input').value;
+		            const validAirports = ['SVQ', 'DUB', 'svq', 'dub']; // Example airport codes
+		            if (validAirports.includes(airportInput)) {
+		                window.location.href = "airports/" + airportInput.toLowerCase();
+		            } else {
+		                window.location.href = "not-an-airport.html";
+		            }
+		        }
+		    </script>
+    	</div>
     </body>
 </html>
