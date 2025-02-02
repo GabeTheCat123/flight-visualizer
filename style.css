@@ -1,0 +1,22 @@
+body {
+	font-family: Arial;
+	font-weight: 1;
+}
+
+h1, h2, h3, p {
+	font-family: Arial;
+	font-weight: 1;
+}
+
+.center {
+	text-align: center;
+}
+
+hr {
+	border: solid 1px gray;
+}
+
+hr.small{
+	width: 15%;
+}
+
