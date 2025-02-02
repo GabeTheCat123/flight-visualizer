@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVQ Airport</title>
+        <link rel="stylesheet" href="../../style.css">
+        <script>
+        	var data = {
+				"h": 1,
+				"min": 0,
+				"code": "SVQ",
+				"name": "San Pablo International Airport",
+				"city": "Seville",
+				"country": "Spain",
+			};
+		
+			function updateClock() {
+	            const now = new Date();
+	            const UTCh = now.getUTCHours();
+	            const UTCmin = now.getUTCMinutes();
+	            document.getElementById("time").innerText = (UTCh + data.h).toString().padStart(2, '0') + ":" + (UTCmin + data.min).toString().padStart(2, '0');
+	        };
+	        
+	        setInterval(updateClock, 1000);
+	        updateClock();
+        </script>
+    </head>
+    <body>
+    	<p>You're at <script>document.write(data.name);</script> (<script>document.write(data.code);</script>) in <script>document.write(data.city);</script>, <script>document.write(data.country);</script>, the current time is <span id="time"></span></p>
+    </body>
+</html>
